@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyPartDef>
+    <defName>TS_Foot</defName>
+    <label>foot</label>
+    <hitPoints>40</hitPoints>
+    <frostbiteVulnerability>0</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>TS_Radula</defName>
+    <label>radula</label>
+    <hitPoints>20</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>TS_Tentacle</defName>
+    <label>tentacle</label>
+    <hitPoints>15</hitPoints>
+    <frostbiteVulnerability>5</frostbiteVulnerability>
+    <skinCovered>true</skinCovered>
+    <tags>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>TS_Mantle</defName>
+    <label>mantle</label>
+    <hitPoints>30</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <canSuggestAmputation>false</canSuggestAmputation>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>BreathingPathway</li>
+      <li>EatingPathway</li>
+      <li>TalkingPathway</li>
+    </tags>
+  </BodyPartDef>
+  
+</Defs>

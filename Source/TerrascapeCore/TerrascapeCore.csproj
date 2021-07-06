@@ -17,7 +17,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.2\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.3\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -66,8 +66,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Comps\CompAnimalForaging.cs" />
+    <Compile Include="Comps\CompRootedPlant.cs" />
+    <Compile Include="Comps\HediffComp_PredatorHealing.cs" />
+    <Compile Include="DefModExtensions\BiomeExtension.cs" />
+    <Compile Include="DefOfs\TSDefOf.cs" />
+    <Compile Include="MapGeneration\GenStep_RootedPlants.cs" />
+    <Compile Include="Patches\FireflyPatch.cs" />
+    <Compile Include="Patches\MangroveSwampPatch.cs" />
+    <Compile Include="Patches\NoBeachPatch.cs" />
+    <Compile Include="Patches\PatchAll.cs" />
+    <Compile Include="Patches\PredatorHealingPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Terrascape_Mod.cs" />
+    <Compile Include="Terrascape_Settings.cs" />
+    <Compile Include="ThingClasses\Plant_Root.cs" />
+    <Compile Include="Utilities\TideUtility.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

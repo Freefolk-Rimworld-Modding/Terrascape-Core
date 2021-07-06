@@ -72,6 +72,7 @@ namespace TerrascapeCore
 			Scribe_Values.Look(ref spawnTemperateRainforest, "spawnTemperateRainforest", defaultValue: true);
 			Scribe_Values.Look(ref spawnXericShrubland, "spawnXericShrubland", defaultValue: true);
 			Scribe_Values.Look(ref spawnFleshPit, "spawnFleshPit", defaultValue: true);
+			Scribe_Values.Look(ref spawnPlantRoots, "spawnPlantRoots", defaultValue: true);
 			Scribe_Values.Look(ref enablePredatorHealing, "enablePredatorHealing", defaultValue: true);
 			Scribe_Values.Look(ref enableAnimalForaging, "enableAnimalForaging", defaultValue: true);
 		}

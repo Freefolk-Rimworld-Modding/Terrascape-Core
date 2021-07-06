@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>BloodInEyes</defName>
+    <label>blood</label>
+    <labelNoun>blood</labelNoun>
+    <description>Blood in the eyes. It impairs vision, but can be cleared in a few moments.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <battleStateLabel>blind</battleStateLabel>
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <partEfficiencyOffset>-0.8</partEfficiencyOffset>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SelfHeal">
+        <healAmount>0.05</healAmount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>TS_Hediff_PredatorHealing</defName>
+    <label>predator healing</label>
+    <description>Wild predators have a chance to heal wounds after eating prey.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <makesAlert>false</makesAlert>
+    <maxSeverity>1</maxSeverity>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="Terrascape.HediffCompProperties_PredatorHealing">
+        
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>7500~15000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>

@@ -18,6 +18,11 @@ namespace TerrascapeCore
 
         public override void Generate(Map map, GenStepParams parms)
         {
+            if (!Terrascape_Settings.spawnPlantRoots)
+            {
+                return;
+            }
+
             map.regionAndRoomUpdater.Enabled = false;
 
             // since we're looping through the list, we need to prevent new roots from being added to the list mid-loop

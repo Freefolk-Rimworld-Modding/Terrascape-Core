@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+  
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+          
+            <!-- Add roots to Cypress Trees-->
+          
+            <li Class = "PatchOperationConditional">
+                <xpath>/Defs/ThingDef[defName="Plant_TreeCypress"]/comps</xpath>
+                <match Class="PatchOperationAdd">
+                    <xpath>/Defs/ThingDef[defName="Plant_TreeCypress"]/comps</xpath>
+                    <value>
+                        <li Class="Terrascape.CompProperties_RootedPlant">
+                            <root>TS_Root_Cypress</root>
+                            <maxRoots>2</maxRoots>
+                            <rootGrowthRadius>1</rootGrowthRadius>
+                            <rootType>Wet</rootType>
+                        </li>
+                    </value>
+                </match>
+                <nomatch Class="PatchOperationAdd">
+                    <xpath>/Defs/ThingDef[defName="Plant_TreeCypress"]</xpath>
+                    <value>
+                        <comps>
+                            <li Class="Terrascape.CompProperties_RootedPlant">
+                                <root>TS_Root_Cypress</root>
+                                <maxRoots>2</maxRoots>
+                                <rootGrowthRadius>1</rootGrowthRadius>
+                                <rootType>Wet</rootType>
+                            </li>
+                        </comps>
+                    </value>
+                </nomatch>
+            </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/MapGeneratorDef[@Name="MapCommonBase"]/genSteps</xpath>
+            <value>
+              <li>TS_RootedPlants</li>
+            </value>
+          </li>
+
+          <!-- Make chickens use the new chick graphics -->
+          
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/PawnKindDef[defName="Chicken"]/lifeStages/li[label="chick"]/bodyGraphicData/texPath</xpath>
+            <value>
+              <texPath>Things/Pawn/Animal/Chicken/Chick</texPath>
+            </value>
+          </li>
+
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/PawnKindDef[defName="Chicken"]/lifeStages/li[label="chick"]/bodyGraphicData/color</xpath>
+          </li>
+
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/PawnKindDef[defName="Chicken"]/lifeStages/li[label="chick"]/dessicatedBodyGraphicData/texPath</xpath>
+            <value>
+              <texPath>Things/Pawn/Animal/Chicken/Dessicated_Chick</texPath>
+            </value>
+          </li>
+          
+        </operations>
+    </Operation>
+
+</Patch>

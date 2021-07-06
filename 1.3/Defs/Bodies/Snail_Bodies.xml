@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyDef>
+    <defName>TS_Snail</defName>
+    <label>snail</label>
+    <corePart>
+      <def>TurtleShell</def>
+      <height>Top</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>TS_Mantle</def>
+          <coverage>0.05</coverage>
+          <depth>Inside</depth>
+          <parts>
+              <li>
+                  <def>Stomach</def>
+                  <coverage>0.05</coverage>
+                  <depth>Inside</depth>
+              </li>
+              <li>
+                  <def>Heart</def>
+                  <coverage>0.02</coverage>
+                  <depth>Inside</depth>
+              </li>
+              <li>
+                  <def>Lung</def>
+                  <coverage>0.05</coverage>
+                  <depth>Inside</depth>
+              </li>
+              <li>
+                  <def>Kidney</def>
+                  <coverage>0.03</coverage>
+                  <depth>Inside</depth>
+              </li>
+              <li>
+                  <def>Liver</def>
+                  <coverage>0.05</coverage>
+                  <depth>Inside</depth>
+              </li>
+          </parts>
+        </li>
+        <li>
+          <def>Neck</def>
+          <customLabel>body</customLabel>
+          <coverage>0.2</coverage>
+          <height>Middle</height>
+          <parts>
+            <li>
+              <def>Head</def>
+              <coverage>0.2</coverage>
+              <groups>
+                <li>HeadAttackTool</li>
+              </groups>
+              <parts>
+                <li>
+                    <def>Brain</def>
+                    <customLabel>cerebral ganglia</customLabel>
+                    <coverage>0.1</coverage>
+                    <depth>Inside</depth>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>left eyestalk</customLabel>
+                  <coverage>0.15</coverage>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>right eyestalk</customLabel>
+                  <coverage>0.15</coverage>
+                </li>
+                <li>
+                  <def>TS_Tentacle</def>
+                  <customLabel>left tentacle</customLabel>
+                  <coverage>0.12</coverage>
+                </li>
+                <li>
+                  <def>TS_Tentacle</def>
+                  <customLabel>right tentacle</customLabel>
+                  <coverage>0.12</coverage>
+                </li>
+                <li>
+                  <def>TS_Radula</def>
+                  <coverage>0.1</coverage>
+                  <groups>
+                    <li>TS_RadulaAttackTool</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>TS_Foot</def>
+          <coverage>0.2</coverage>
+          <height>Bottom</height>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+  
+</Defs>

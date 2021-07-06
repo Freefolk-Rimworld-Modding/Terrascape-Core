@@ -65,6 +65,10 @@ namespace TerrascapeCore
 		// Adds progress if the rooted plant is growing and doesn't yet have the max number of roots.
 		public override void CompTickLong()
 		{
+			if (!Terrascape_Settings.spawnPlantRoots)
+			{
+				return;
+			}
 			Plant p = (Plant)parent;
 			if (p != null && p.LifeStage == PlantLifeStage.Growing && !HasMaxRoots())
 			{
@@ -179,7 +183,7 @@ namespace TerrascapeCore
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
-			if (Prefs.DevMode)
+			if (Prefs.DevMode && Terrascape_Settings.spawnPlantRoots)
 			{
 				// Adds 100% progress if the number of roots is less than max roots
 				Command_Action command_Action = new Command_Action();
