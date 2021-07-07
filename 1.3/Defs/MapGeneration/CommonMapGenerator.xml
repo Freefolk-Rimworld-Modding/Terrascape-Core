@@ -4,7 +4,7 @@
   <GenStepDef>
     <defName>TS_RootedPlants</defName>
     <order>801</order>
-    <genStep Class="Terrascape.GenStep_RootedPlants"/>
+    <genStep Class="TerrascapeCore.GenStep_RootedPlants"/>
   </GenStepDef>
 
 </Defs>

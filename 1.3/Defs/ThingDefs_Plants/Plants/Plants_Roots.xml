@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="PlantBase">
+        <defName>TS_Root_Cypress</defName>
+        <label>cypress knee</label>
+        <thingClass>TerrascapeCore.Plant_Root</thingClass>
+        <description>A tapering woody growth that may provide stability in soft ground.</description>
+        <statBases>
+            <MaxHitPoints>95</MaxHitPoints>
+            <Flammability>0.8</Flammability>
+            <Nutrition>0.3</Nutrition>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Plant/Roots/Root_Cypress</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <passability>PassThroughOnly</passability>
+        <hideAtSnowDepth>0.5</hideAtSnowDepth>
+        <pathCost>42</pathCost>
+        <selectable>true</selectable>
+        <ingestible Inherit="false">
+            <foodType>Tree</foodType>
+            <preferability>RawBad</preferability>
+        </ingestible>
+        <plant>
+            <fertilityMin>0.7</fertilityMin>
+            <fertilitySensitivity>0.5</fertilitySensitivity>
+            <dieIfLeafless>false</dieIfLeafless>
+            <growDays>5</growDays>
+            <soundHarvesting>Harvest_Tree</soundHarvesting>
+            <soundHarvestFinish>Harvest_Tree_Finish</soundHarvestFinish>
+            <harvestFailable>false</harvestFailable>
+            <harvestWork>300</harvestWork>
+            <harvestMinGrowth>0.40</harvestMinGrowth>
+            <harvestedThingDef>WoodLog</harvestedThingDef>
+            <harvestYield>1</harvestYield>
+            <harvestTag>Wood</harvestTag>
+            <maxMeshCount>4</maxMeshCount>
+            <visualSizeRange>0.3~0.5</visualSizeRange>
+            <topWindExposure>0.25</topWindExposure>
+            <wildOrder>3</wildOrder>
+        </plant>
+    </ThingDef>
+
+</Defs>

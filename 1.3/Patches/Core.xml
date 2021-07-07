@@ -12,7 +12,7 @@
                 <match Class="PatchOperationAdd">
                     <xpath>/Defs/ThingDef[defName="Plant_TreeCypress"]/comps</xpath>
                     <value>
-                        <li Class="Terrascape.CompProperties_RootedPlant">
+                        <li Class="TerrascapeCore.CompProperties_RootedPlant">
                             <root>TS_Root_Cypress</root>
                             <maxRoots>2</maxRoots>
                             <rootGrowthRadius>1</rootGrowthRadius>
@@ -24,7 +24,7 @@
                     <xpath>/Defs/ThingDef[defName="Plant_TreeCypress"]</xpath>
                     <value>
                         <comps>
-                            <li Class="Terrascape.CompProperties_RootedPlant">
+                            <li Class="TerrascapeCore.CompProperties_RootedPlant">
                                 <root>TS_Root_Cypress</root>
                                 <maxRoots>2</maxRoots>
                                 <rootGrowthRadius>1</rootGrowthRadius>

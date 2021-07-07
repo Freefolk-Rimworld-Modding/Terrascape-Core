@@ -20,7 +20,7 @@
       </li>
     </comps>
   </HediffDef>
-
+<!--
   <HediffDef>
     <defName>TS_Hediff_PredatorHealing</defName>
     <label>predator healing</label>
@@ -31,7 +31,7 @@
     <maxSeverity>1</maxSeverity>
     <initialSeverity>1</initialSeverity>
     <comps>
-      <li Class="Terrascape.HediffCompProperties_PredatorHealing">
+      <li Class="TerrascapeCore.HediffCompProperties_PredatorHealing">
         
       </li>
       <li Class="HediffCompProperties_Disappears">
@@ -39,5 +39,5 @@
       </li>
     </comps>
   </HediffDef>
-
+-->
 </Defs>

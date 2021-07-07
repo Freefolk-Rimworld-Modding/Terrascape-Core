@@ -1,15 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Terrascape Core</name>
-	<author>Tidal</author>
-	<authors>
-		<li>Zylle</li>
-	</authors>
+	<author>Tidal, Zylle</author>
 	<supportedVersions>
 		<li>1.3</li>
 	</supportedVersions>
 	<packageId>terrascape.core</packageId>
-	<description></description>
+	<description>A framework for Terrascape, includes several additions to vanilla, including new or improved graphics.</description>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
@@ -24,9 +21,9 @@
 		</li>
 	</modDependencies>
 	<loadAfter>
+		<li>brrainz.harmony</li>
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
-		<li>brrainz.harmony</li>
 		<li>VanillaExpanded.VCEF</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>

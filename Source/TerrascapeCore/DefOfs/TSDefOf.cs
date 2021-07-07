@@ -16,8 +16,6 @@ namespace TerrascapeCore
     {
         public static TerrainDef Mud;
 
-        public static HediffDef TS_Hediff_PredatorHealing;
-
         static TSDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(TSDefOf));
