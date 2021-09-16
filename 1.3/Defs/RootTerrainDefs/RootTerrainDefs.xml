@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <TerrascapeCore.RootTerrainDef Name="RootTerrainDefDry">
+        <defName>RootTerrainDry</defName>
+        <rootType>Dry</rootType>
+        <allowedTerrains>
+
+            <!-- Vanilla -->
+            <li>Soil</li>
+		    <li>MossyTerrain</li>
+		    <li>MarshyTerrain</li>
+		    <li>SoilRich</li>
+		    <li>Gravel</li>
+            <li>Sand</li>
+            <li>SoftSand</li>
+
+            <!-- Terrascape -->
+            <li>TS_RedSoil</li>
+            <li>TS_RedSoilRich</li>
+
+            <!-- Biomes -->
+            <li>BiomesCore_Pebbles</li>
+
+        </allowedTerrains>      
+    </TerrascapeCore.RootTerrainDef>
+
+    <TerrascapeCore.RootTerrainDef ParentName="RootTerrainDefDry">
+        <defName>RootTerrainWet</defName>
+        <rootType>Wet</rootType>
+        <allowedTerrains>
+
+            <!-- Vanilla -->
+            <li>WaterDeep</li>
+		    <li>WaterMovingChestDeep</li>
+		    <li>WaterShallow</li>
+		    <li>WaterMovingShallow</li>
+		    <li>Marsh</li>
+		    <li>WaterOceanShallow</li>
+            <li>Mud</li>
+            
+            <!-- Biomes -->
+            <li>BiomesCore_WaterShallowLagoon</li>
+
+        </allowedTerrains>      
+    </TerrascapeCore.RootTerrainDef>
+
+    <TerrascapeCore.RootTerrainDef>
+        <defName>RootTerrainSubmerged</defName>
+        <rootType>Submerged</rootType>
+        <allowedTerrains>
+
+            <!-- Vanilla -->
+            <li>WaterDeep</li>
+		    <li>WaterMovingChestDeep</li>
+		    <li>WaterShallow</li>
+		    <li>WaterMovingShallow</li>
+		    <li>Marsh</li>
+		    <li>WaterOceanShallow</li>
+
+            <!-- Biomes -->
+            </li>BiomesCore_WaterShallowLagoon</li>
+
+        </allowedTerrains>      
+    </TerrascapeCore.RootTerrainDef>
+
+    <TerrascapeCore.RootTerrainDef>
+        <defName>RootTerrainStony</defName>
+        <rootType>Stony</rootType>
+        <allowedTerrains>
+
+            <!-- Vanilla -->
+            <li>Limestone_Rough</li>
+            <li>Granite_Rough</li>
+            <li>Sandstone_Rough</li>
+            <li>Marble_Rough</li>
+            <li>Slate_Rough</li>
+            
+        </allowedTerrains>      
+    </TerrascapeCore.RootTerrainDef>
+   
+</Defs>

@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml;
 using System.Text;
 using System.Threading.Tasks;
-using RimWorld;
-using HarmonyLib;
 using Verse;
+using RimWorld;
 using UnityEngine;
+using System.Reflection;
+using HarmonyLib;
 
 namespace TerrascapeCore
 {
-    public class TideUtility
-    {   
-
-    }
+	internal class RootTerrainDef : Def
+	{
+		public string rootType;
+		public List<string> allowedTerrains;
+	}
 }

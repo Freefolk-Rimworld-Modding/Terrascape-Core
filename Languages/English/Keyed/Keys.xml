@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!--===== Mod =====-->
+  <TS_ModName>Terrascape</TS_ModName>
+
+  <!--===== Settings =====-->
+  
+      <!-- Biomes -->
+  <TS_CheckboxMangroveSwamp>allow mangrove swamps</TS_CheckboxMangroveSwamp>
+  <TS_CheckboxMangroveSwampDesc>If unchecked, mangrove swamps will not spawn.</TS_CheckboxMangroveSwampDesc>
+
+  <TS_CheckBoxTemperateRainforest>allow temperate rainforests</TS_CheckBoxTemperateRainforest>
+  <TS_CheckBoxTemperateRainforest>If unchecked, temperate rainforests will not spawn.</TS_CheckBoxTemperateRainforest>
+  
+  <TS_CheckBoxSavanna>allow savannas</TS_CheckBoxSavanna>
+  <TS_CheckBoxSavannaDesc>If unchecked, savannas will not spawn.</TS_CheckBoxSavannaDesc>
+
+  <TS_CheckBoxSavanna>allow xeric shrubland</TS_CheckBoxSavanna>
+  <TS_CheckBoxSavannaDesc>If unchecked, xeric shrublands will not spawn.</TS_CheckBoxSavannaDesc>
+
+      <!-- Natural Features-->
+  <TS_CheckboxPlantRoots>allow certain plants to grow roots</TS_CheckboxPlantRoots>
+  <TS_CheckboxPlantRootsDesc>If unchecked, plants will not grow roots.</TS_CheckboxPlantRootsDesc>
+
+
+  <!--===== Nocturnal Animals =====-->
+  <NocturnalAnimals.BodyClock>Body clock</NocturnalAnimals.BodyClock>
+  <NocturnalAnimals.BodyClock_Description>The creature's natural sleeping pattern.\n\nDiurnal creatures are awake during daytime, nocturnal creatures during nighttime, and crepuscular creatures during mornings and evenings.</NocturnalAnimals.BodyClock_Description>
+  <NocturnalAnimals.BodyClock_Diurnal>Diurnal</NocturnalAnimals.BodyClock_Diurnal>
+  <NocturnalAnimals.BodyClock_Nocturnal>Nocturnal</NocturnalAnimals.BodyClock_Nocturnal>
+  <NocturnalAnimals.BodyClock_Crepuscular>Crepuscular</NocturnalAnimals.BodyClock_Crepuscular>
+
+</LanguageData>

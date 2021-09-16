@@ -106,6 +106,26 @@ namespace TerrascapeCore
 			}
 		}
 
+		// Returns true if the chosen type of root can grow in the chosen terrain.
+		public bool IsRootableTerrain(string thisRootType, TerrainDef thisTerrain)
+        {
+			if (thisRootType == null || thisTerrain == null)
+            {
+				return false;
+            }
+			foreach (RootTerrainDef allDef in DefDatabase<RootTerrainDef>.AllDefs)
+			{
+				foreach (string allowedTerrain in allDef.allowedTerrains)
+				{
+					if (allowedTerrain == thisTerrain.defName)
+					{
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
 		// Grows a new root within a defined radius, with a choice between Wet or Dry terrain affordance.
 		public void GrowRoot()
 		{
@@ -118,53 +138,70 @@ namespace TerrascapeCore
 				{
 					TerrainDef terrain = c.GetTerrain(parent.Map);
 					bool flag = false;
-                    switch (Props.rootType)
-                    {
-						// Wet roots can spawn in mud and water, or otherwise fertile terrain.
-						case "Wet":
-							if (terrain != null && (terrain.IsWater || terrain == TSDefOf.Mud || parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin))
-							{
-								List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
-								foreach (Thing item in list)
-								{
-									if (item.def == Props.root || (item.def.selectable && (item.def.category == ThingCategory.Plant || item.def.category == ThingCategory.Building)))
-									{
-										flag = true;
-										break;
-									}
-								}
-								if (!flag)
-								{
-									positions.Add(c);
-								}
-							}
-							break;
+					if (terrain != null && IsRootableTerrain(Props.rootType, terrain))
+					{
+                        List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
+                        foreach (Thing item in list)
+                        {
+                            if (item.def == Props.root || (item.def.selectable && (item.def.category == ThingCategory.Plant || item.def.category == ThingCategory.Building)))
+                            {
+                                flag = true;
+                                break;
+                            }
+                        }
+                        if (!flag)
+                        {
+                            positions.Add(c);
+                        }
+                    }
+					//  // Original Code
+					//               switch (Props.rootType)
+					//               {
+					//	// Wet roots can spawn in mud and water, or otherwise fertile terrain.
+					//	case "Wet":
+					//		if (terrain != null && (terrain.IsWater || terrain == TSDefOf.Mud || parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin))
+					//		{
+					//			List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
+					//			foreach (Thing item in list)
+					//			{
+					//				if (item.def == Props.root || (item.def.selectable && (item.def.category == ThingCategory.Plant || item.def.category == ThingCategory.Building)))
+					//				{
+					//					flag = true; // (Props.rootType == "Dry" && parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin)
+					//					break;
+					//				}
+					//			}
+					//			if (!flag)
+					//			{
+					//				positions.Add(c);
+					//			}
+					//		}
+					//		break;
 
-						// Dry roots grow as normal in fertile terrain.
-						case "Dry":
-							if (terrain != null && parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin)
-							{
-								List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
-								foreach (Thing item in list)
-								{
-									if (item.def == Props.root || (item.def.selectable && (item.def.category == ThingCategory.Plant || item.def.category == ThingCategory.Building)))
-									{
-										flag = true;
-										break;
-									}
-								}
-								if (!flag)
-								{
-									positions.Add(c);
-								}
-							}
-							break;
+					//	// Dry roots grow as normal in fertile terrain.
+					//	case "Dry":
+					//		if (terrain != null && parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin)
+					//		{
+					//			List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
+					//			foreach (Thing item in list)
+					//			{
+					//				if (item.def == Props.root || (item.def.selectable && (item.def.category == ThingCategory.Plant || item.def.category == ThingCategory.Building)))
+					//				{
+					//					flag = true;
+					//					break;
+					//				}
+					//			}
+					//			if (!flag)
+					//			{
+					//				positions.Add(c);
+					//			}
+					//		}
+					//		break;
 
-						// Log an error if the root is missing a type.
-						default:
-							Log.Error(string.Concat(parent.def, " has a rootType that is missing or incorrect in Terrascape.CompProperties_RootedPlant; rootType must be either \"Wet\" or \"Dry\"."));
-							break;
-					}
+					//	// Log an error if the root is missing a type.
+					//	default:
+					//		Log.Error(string.Concat(parent.def, " has a rootType that is missing or incorrect in Terrascape.CompProperties_RootedPlant; rootType must be either \"Wet\" or \"Dry\"."));
+					//		break;
+					//}
 				}
 			}
 			if (!positions.NullOrEmpty())
@@ -172,11 +209,14 @@ namespace TerrascapeCore
 				roots.Add(GenSpawn.Spawn(Props.root, positions.RandomElement<IntVec3>(), parent.Map));
 				Plant_Root recentRoot = (Plant_Root)roots[roots.Count - 1];
 				recentRoot.LivingParent = true;
-
 				// Randomizes the root grown during map generation.
                 if (IsGenStep)
                 {
-					recentRoot.Growth = Rand.Range(0.05f, 1f);
+					recentRoot.Growth = Rand.Range(0.15f, 1f);
+                }
+                else
+                {
+					recentRoot.Growth = 0.15f;
                 }
             }
 		}
@@ -240,7 +280,7 @@ namespace TerrascapeCore
 		// If true, will remove all roots when the parent despawns.
 		public bool removeOnDespawn = false;
 
-		// rootType can be "Wet" or "Dry" - wet roots will grow in mud and water terrain in addition to regular ground.
+		// By default, can be wet, dry, submerged, or stony. New root types can be added with a RootTerrainDef.
 		public string rootType;
 
 		public CompProperties_RootedPlant()

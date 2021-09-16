@@ -6,5 +6,11 @@
     <order>801</order>
     <genStep Class="TerrascapeCore.GenStep_RootedPlants"/>
   </GenStepDef>
+<!--
+  <GenStepDef>
+    <defName>TS_Boulders</defName>
+    <order>269</order>
+    <genStep Class="TerrascapeCore.GenStep_Boulders"/>
+  </GenStepDef>-->
 
 </Defs>

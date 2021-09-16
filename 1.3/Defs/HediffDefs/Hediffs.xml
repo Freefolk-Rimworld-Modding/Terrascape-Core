@@ -20,24 +20,5 @@
       </li>
     </comps>
   </HediffDef>
-<!--
-  <HediffDef>
-    <defName>TS_Hediff_PredatorHealing</defName>
-    <label>predator healing</label>
-    <description>Wild predators have a chance to heal wounds after eating prey.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <isBad>false</isBad>
-    <makesAlert>false</makesAlert>
-    <maxSeverity>1</maxSeverity>
-    <initialSeverity>1</initialSeverity>
-    <comps>
-      <li Class="TerrascapeCore.HediffCompProperties_PredatorHealing">
-        
-      </li>
-      <li Class="HediffCompProperties_Disappears">
-        <disappearsAfterTicks>7500~15000</disappearsAfterTicks>
-      </li>
-    </comps>
-  </HediffDef>
--->
+
 </Defs>

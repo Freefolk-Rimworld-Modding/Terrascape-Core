@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Animals Expanded — Tropical Swamp</li>
+      </mods>
+      <match Class="PatchOperationSequence">
+        <operations>
+
+          <!-- Make anacondas give birth -->
+          <li Class="PatchOperationRemove">
+            <xpath>/Defs/ThingDef[defName="AEXP_Anaconda"]/comps/li[@Class="CompProperties_EggLayer"]</xpath>
+          </li>
+          
+        </operations>
+      </match>
+    </Operation>
+
+</Patch>

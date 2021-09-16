@@ -26,7 +26,7 @@ namespace TerrascapeCore
 
 		public static bool spawnSaltPan = true;
 
-		public static bool spawnSavannah = true;
+		public static bool spawnSavanna = true;
 
 		public static bool spawnXericShrubland = true;
 
@@ -76,7 +76,7 @@ namespace TerrascapeCore
 
 		// Tweaks
 
-		public static bool enableAnimalForaging = true;
+		//public static bool enableAnimalForaging = true;
 
 		public override void ExposeData()
 		{
@@ -87,15 +87,17 @@ namespace TerrascapeCore
 			Scribe_Values.Look(ref spawnMudflat, "spawnMudflat", defaultValue: true);
 			Scribe_Values.Look(ref spawnTemperateRainforest, "spawnTemperateRainforest", defaultValue: true);
 			Scribe_Values.Look(ref spawnSaltPan, "spawnSaltPan", defaultValue: true);
-			Scribe_Values.Look(ref spawnSavannah, "spawnSavannah", defaultValue: true);
+			Scribe_Values.Look(ref spawnSavanna, "spawnSavanna", defaultValue: true);
 			Scribe_Values.Look(ref spawnXericShrubland, "spawnXericShrubland", defaultValue: true);
 
 			// Exotic Biomes
 			Scribe_Values.Look(ref spawnFleshPit, "spawnFleshPit", defaultValue: true);
+
+			// Features
 			Scribe_Values.Look(ref spawnPlantRoots, "spawnPlantRoots", defaultValue: true);
 
 			// Tweaks
-			Scribe_Values.Look(ref enableAnimalForaging, "enableAnimalForaging", defaultValue: true);
+			//Scribe_Values.Look(ref enableAnimalForaging, "enableAnimalForaging", defaultValue: true);
 		}
 	}	
 }

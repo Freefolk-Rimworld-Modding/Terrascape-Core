@@ -14,13 +14,9 @@ namespace TerrascapeCore
     [StaticConstructorOnStartup]
     public class Plant_Root : Plant
     {
-
 		public bool growsWithoutParent = false;
-
         public bool diesWithoutParent = true;
-
         public float parentlessDamagePerTick = 0.005f;
-
 		private bool livingParent = true;
 
 		public bool LivingParent
