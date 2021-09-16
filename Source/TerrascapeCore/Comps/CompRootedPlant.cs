@@ -107,21 +107,22 @@ namespace TerrascapeCore
 		}
 
 		// Returns true if the chosen type of root can grow in the chosen terrain.
-		public bool IsRootableTerrain(string thisRootType, TerrainDef thisTerrain)
+		public bool IsRootableTerrain(IntVec3 c)
         {
-			if (thisRootType == null || thisTerrain == null)
-            {
-				return false;
-            }
+			TerrainDef terrainDef = parent.Map.terrainGrid.TerrainAt(c);
 			foreach (RootTerrainDef allDef in DefDatabase<RootTerrainDef>.AllDefs)
 			{
+				if (!(allDef.rootType == Props.rootType))
+                {
+					continue;
+                }
 				foreach (string allowedTerrain in allDef.allowedTerrains)
-				{
-					if (allowedTerrain == thisTerrain.defName)
-					{
+                {
+					if (allowedTerrain == terrainDef.defName)
+                    {
 						return true;
-					}
-				}
+                    }
+                }
 			}
 			return false;
 		}
@@ -136,9 +137,8 @@ namespace TerrascapeCore
 				IntVec3 c = parent.Position + GenRadial.RadialPattern[i];
 				if (c.InBounds(parent.Map) || WanderUtility.InSameRoom(parent.Position, c, parent.Map))
 				{
-					TerrainDef terrain = c.GetTerrain(parent.Map);
 					bool flag = false;
-					if (terrain != null && IsRootableTerrain(Props.rootType, terrain))
+					if (IsRootableTerrain(c))
 					{
                         List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
                         foreach (Thing item in list)

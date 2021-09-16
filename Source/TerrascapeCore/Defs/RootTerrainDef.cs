@@ -11,7 +11,7 @@ using HarmonyLib;
 
 namespace TerrascapeCore
 {
-	internal class RootTerrainDef : Def
+	public class RootTerrainDef : Def
 	{
 		public string rootType;
 		public List<string> allowedTerrains;

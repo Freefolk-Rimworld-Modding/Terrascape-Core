@@ -5,7 +5,7 @@
         <defName>TS_Root_Cypress</defName>
         <label>cypress knee</label>
         <thingClass>TerrascapeCore.Plant_Root</thingClass>
-        <description>A tapering woody growth that may provide stability in soft ground.</description>
+        <description>A tapering, woody growth found near cypress trees.</description>
         <statBases>
             <MaxHitPoints>95</MaxHitPoints>
             <Flammability>0.8</Flammability>

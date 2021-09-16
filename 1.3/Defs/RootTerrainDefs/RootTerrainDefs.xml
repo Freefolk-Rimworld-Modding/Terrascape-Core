@@ -59,7 +59,7 @@
 		    <li>WaterOceanShallow</li>
 
             <!-- Biomes -->
-            </li>BiomesCore_WaterShallowLagoon</li>
+            <li>BiomesCore_WaterShallowLagoon</li>
 
         </allowedTerrains>      
     </TerrascapeCore.RootTerrainDef>
