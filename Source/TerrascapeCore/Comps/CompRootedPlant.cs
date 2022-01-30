@@ -49,9 +49,7 @@ namespace TerrascapeCore
 		{		
 			Plant p = (Plant)parent;
 			if (p != null)
-            {
 				return 1f / (30f * Props.growthCycleDays) * p.GrowthRate;
-			}
 			return 0f;
 		}
 
@@ -66,32 +64,24 @@ namespace TerrascapeCore
 		public override void CompTickLong()
 		{
 			if (!Terrascape_Settings.spawnPlantRoots)
-			{
 				return;
-			}
 			Plant p = (Plant)parent;
 			if (p != null && p.LifeStage == PlantLifeStage.Growing && !HasMaxRoots())
-			{
 				AddProgress(ProgressPerTickLong());
-			}
 		}
 
 		// Removes roots on despawn if set in properties, else tells the roots that their parent is dead. :(
 		public override void PostDeSpawn(Map map)
 		{
 			if (Props.removeOnDespawn)
-			{
 				roots.RemoveAll((Thing p) => !p.Spawned);
-			}
 			else
 			{
 				foreach (Thing i in roots)
 				{
 					Plant_Root p = (Plant_Root)i;
 					if (p != null)
-					{
 						p.LivingParent = false;
-					}
 				}
 			}
 		}
@@ -113,16 +103,10 @@ namespace TerrascapeCore
 			foreach (RootTerrainDef allDef in DefDatabase<RootTerrainDef>.AllDefs)
 			{
 				if (!(allDef.rootType == Props.rootType))
-                {
 					continue;
-                }
 				foreach (string allowedTerrain in allDef.allowedTerrains)
-                {
 					if (allowedTerrain == terrainDef.defName)
-                    {
 						return true;
-                    }
-                }
 			}
 			return false;
 		}
@@ -150,9 +134,7 @@ namespace TerrascapeCore
                             }
                         }
                         if (!flag)
-                        {
                             positions.Add(c);
-                        }
                     }
 				}
 			}
@@ -163,13 +145,9 @@ namespace TerrascapeCore
 				recentRoot.LivingParent = true;
 				// Randomizes the root grown during map generation.
                 if (IsGenStep)
-                {
 					recentRoot.Growth = Rand.Range(0.15f, 1f);
-                }
                 else
-                {
 					recentRoot.Growth = 0.15f;
-                }
             }
 		}
 
@@ -183,9 +161,7 @@ namespace TerrascapeCore
 				command_Action.action = delegate
 				{
 					if (!HasMaxRoots())
-                    {
-						AddProgress(1f);
-					}		
+						AddProgress(1f);	
 				};
 				yield return command_Action;
 
@@ -195,9 +171,7 @@ namespace TerrascapeCore
 				command_Action2.action = delegate
 				{
 					if (!HasMaxRoots())
-					{
 						AddProgress(ProgressPerTickLong());
-					}
 				};
 				yield return command_Action2;
 			}
@@ -209,9 +183,7 @@ namespace TerrascapeCore
 			Scribe_Values.Look(ref progressToNewRoot, "progressToNewRoot", 0f);
 			Scribe_Collections.Look(ref roots, "roots", LookMode.Reference);
 			if (Scribe.mode == LoadSaveMode.PostLoadInit)
-			{
 				roots.RemoveAll((Thing x) => x == null);
-			}
 		}
 	}
 
