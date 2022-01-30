@@ -127,7 +127,7 @@ namespace TerrascapeCore
 			return false;
 		}
 
-		// Grows a new root within a defined radius, with a choice between Wet or Dry terrain affordance.
+		// Grows a new root within a defined radius if there is rootable terrain.
 		public void GrowRoot()
 		{
 			int num = GenRadial.NumCellsInRadius(Props.rootGrowthRadius);
@@ -154,54 +154,6 @@ namespace TerrascapeCore
                             positions.Add(c);
                         }
                     }
-					//  // Original Code
-					//               switch (Props.rootType)
-					//               {
-					//	// Wet roots can spawn in mud and water, or otherwise fertile terrain.
-					//	case "Wet":
-					//		if (terrain != null && (terrain.IsWater || terrain == TSDefOf.Mud || parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin))
-					//		{
-					//			List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
-					//			foreach (Thing item in list)
-					//			{
-					//				if (item.def == Props.root || (item.def.selectable && (item.def.category == ThingCategory.Plant || item.def.category == ThingCategory.Building)))
-					//				{
-					//					flag = true; // (Props.rootType == "Dry" && parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin)
-					//					break;
-					//				}
-					//			}
-					//			if (!flag)
-					//			{
-					//				positions.Add(c);
-					//			}
-					//		}
-					//		break;
-
-					//	// Dry roots grow as normal in fertile terrain.
-					//	case "Dry":
-					//		if (terrain != null && parent.Map.fertilityGrid.FertilityAt(c) >= Props.root.plant?.fertilityMin)
-					//		{
-					//			List<Thing> list = parent.Map.thingGrid.ThingsListAt(c);
-					//			foreach (Thing item in list)
-					//			{
-					//				if (item.def == Props.root || (item.def.selectable && (item.def.category == ThingCategory.Plant || item.def.category == ThingCategory.Building)))
-					//				{
-					//					flag = true;
-					//					break;
-					//				}
-					//			}
-					//			if (!flag)
-					//			{
-					//				positions.Add(c);
-					//			}
-					//		}
-					//		break;
-
-					//	// Log an error if the root is missing a type.
-					//	default:
-					//		Log.Error(string.Concat(parent.def, " has a rootType that is missing or incorrect in Terrascape.CompProperties_RootedPlant; rootType must be either \"Wet\" or \"Dry\"."));
-					//		break;
-					//}
 				}
 			}
 			if (!positions.NullOrEmpty())

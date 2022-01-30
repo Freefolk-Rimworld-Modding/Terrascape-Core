@@ -12,5 +12,6 @@ namespace TerrascapeCore
     {
         public bool IsMangroveSwamp = false;
         public bool customBeach = false;
+        public List<string> drySeasons = null;
     }
 }

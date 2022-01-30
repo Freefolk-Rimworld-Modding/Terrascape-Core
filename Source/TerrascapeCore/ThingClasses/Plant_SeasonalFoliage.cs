@@ -16,6 +16,23 @@ namespace TerrascapeCore
     {
 		private static Graphic GraphicSowing = GraphicDatabase.Get<Graphic_Single>("Things/Plant/Plant_Sowing", ShaderDatabase.Cutout, Vector2.one, Color.white);
 
+		public bool IsDrySeason(BiomeExtension thisExt, Season thisSeason)
+        {
+			if (thisExt.drySeasons == null)
+            {
+				return false;
+            }
+			int seasonCount = thisExt.drySeasons.Count();
+			for (int i = 0; i < (seasonCount-1); i++)
+            {
+				if (thisSeason.ToString() == thisExt.drySeasons[i])
+                {
+					return true;
+                }
+            }
+			return false;
+		}
+
 		public override Graphic Graphic
         {
 			get
@@ -27,6 +44,7 @@ namespace TerrascapeCore
 				Vector2 vector = Find.WorldGrid.LongLatOf(this.Map.Tile);
 				Season season = GenDate.Season((long)Find.TickManager.TicksAbs, vector);
 				PlantExtension ext = def.GetModExtension<PlantExtension>();
+				BiomeExtension ext2 = Map.Biome.GetModExtension<BiomeExtension>();
 				Graphic graphic = def.graphic;
 				if (def.plant.immatureGraphic != null && Growth < ext.matureAt)
                 {
